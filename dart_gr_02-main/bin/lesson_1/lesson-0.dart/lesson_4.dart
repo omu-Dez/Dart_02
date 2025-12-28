@@ -57,7 +57,7 @@ double calculateShipmentCost(
   double weight,
   String city, {
   bool isExpress = false,
-  double baseFee = 10.0,
+  double baseFee = 10.0, 
 }) {
   // возвращаемая функция - с позиционными и именованными необязательные параметрами
   // var factor = 0.0;
