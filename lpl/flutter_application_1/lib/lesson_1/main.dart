@@ -1,3 +1,4 @@
 import 'package:flutter/material.dart';
 import 'profileApp.dart';
-void main() => runApp(Profileapp());
+
+void main() => runApp(ProfileApp());

@@ -10,10 +10,11 @@ class ProfilePage extends StatelessWidget{
 @override
   Widget build(BuildContext context) {
 return Scaffold(
+  backgroundColor: const Color.fromARGB(255, 1, 79, 144),
   appBar: AppBar(
     title: Text("Profile"),
     centerTitle: true,
-    backgroundColor: Colors.blue,
+    backgroundColor: Colors.blueAccent,
     leading: IconButton(onPressed: () {}, icon: Icon(Icons.arrow_back)),
     actions: [
       IconButton(onPressed: () {}, icon: Icon(Icons.search)),
@@ -62,7 +63,7 @@ return Scaffold(
         style: TextStyle(
         fontSize: 16,
         fontFamily: 'Poppins',
-        color: Colors.lightBlue,
+        color: Colors.black,
         ),
         ),
         SizedBox(height: 5),
