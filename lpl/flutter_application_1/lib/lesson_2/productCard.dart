@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
+import 'constants.dart';
 
 class ProductCard extends StatelessWidget {
   final String image;
   final String title;
   final String price;
+  final String category;
   final bool sale;
+  final int rating;
 
   const ProductCard({
     super.key,
     required this.image,
     required this.title,
     required this.price,
-    this.sale = false,
+    this.sale = false, 
+    required this.category, 
+    required this.rating, 
   });
 
   @override
@@ -39,7 +44,7 @@ class ProductCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
                   image,
-                  height: 120,
+                  height: imageHeight,//тут 4 задание
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
@@ -53,7 +58,7 @@ class ProductCard extends StatelessWidget {
                     padding:
                         const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     decoration: BoxDecoration(
-                      color: Colors.red,
+                      color: const Color.fromARGB(255, 255, 0, 0),
                       borderRadius: BorderRadius.circular(8),
                     ),
                     child: const Text(
@@ -84,11 +89,21 @@ class ProductCard extends StatelessWidget {
               Text(
                 price,
                 style: TextStyle(
-                color: Colors.green,
+                color: Colors.black,
                 fontWeight: FontWeight.bold,
                 ),
               ),
             ],
+          ),
+          
+          SizedBox(height: 6),
+          Align(
+            child: Align(
+              alignment: Alignment.bottomCenter,
+              child: ElevatedButton(
+              onPressed: (){},
+              child: Text('Order')),
+            ),
           ),
           SizedBox(height: 6),
           Align(
@@ -96,10 +111,39 @@ class ProductCard extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: ElevatedButton(
               onPressed: (){},
-              child: Text('Buy')),
+              child: Text('В избранное')),
             ),
-          )
+          ),
+
+          SizedBox(height: 6),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              child: Text(
+                category,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 12,
+                ),
+              ),
+            ),
+          ),
           
+          Row(
+            children: List.generate(
+              5,
+              (index) => Icon( 
+                index < rating ? Icons.star : Icons.star_border, 
+                size: 16, color: const Color.fromARGB(255, 255, 225, 0), 
+                ),
+            )
+          )
         ],
       ),
     );
