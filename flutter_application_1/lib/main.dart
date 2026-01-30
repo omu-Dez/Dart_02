@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'ProductDetailPage.dart';
-import 'ProductListPage.dart';
-import 'nav.dart';
-import 'Order.dart';
-
-void main() => runApp(NavApp());
+import 'homePage.dart';
+import 'Settings.dart';
+import 'appDrower.dart';
+import 'telegram.dart';
+void main() => runApp(const MyApp());
