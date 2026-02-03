@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
-import 'contacPage.dart';
-import 'callPage.dart';
+import 'ContactPage.dart';
+import 'CallPage.dart';
 import 'Settings.dart';
 
+
+
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({super.key});
+
+  const AppDrawer({
+    super.key,
+    required this.onToggleTheme,
+    required this.themeMode,
+    
+  });
+  final VoidCallback onToggleTheme;
+  final ThemeMode themeMode;
+
   @override
   Widget build(BuildContext context) {
     final telegramBlue = const Color(0xFF2AABEE);
@@ -17,7 +28,7 @@ class AppDrawer extends StatelessWidget {
             height: 170,
             padding: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: telegramBlue,
+              color: Colors.indigo,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,7 +40,7 @@ class AppDrawer extends StatelessWidget {
                   child: Icon(
                     Icons.person,
                     size: 34,
-                    color: Color(0xFF2AABEE),
+                    color: Colors.indigo,
                   ),
                 ),
                 SizedBox(height: 12),
@@ -52,7 +63,7 @@ class AppDrawer extends StatelessWidget {
           drawerItem(
             context,
             icon: Icons.chat,
-            title: 'Чаты',
+            title: 'Главное меню ',
             onTap: () => Navigator.pop(context),
           ),
           drawerItem(

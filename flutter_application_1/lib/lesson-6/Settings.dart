@@ -1,3 +1,4 @@
+import 'AppDrawer.dart';
 import 'package:flutter/material.dart';
 
 class Settings extends StatelessWidget {
@@ -8,7 +9,7 @@ class Settings extends StatelessWidget {
       appBar: AppBar(title: const Text('Настройки')),
       body: const Center(
         child: Text(
-          'Список контактов',
+          'Настройки',
           style: TextStyle(fontSize: 20),
         ),
       ),
